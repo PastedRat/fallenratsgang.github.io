@@ -23,14 +23,17 @@ form.addEventListener("submit", async (event) => {
   };
 
   try {
-    await fetch(WEBHOOK_URL, {
+    const response = await fetch(WEBHOOK_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(payload),
-      mode: "no-cors",
     });
+
+    if (!response.ok) {
+      throw new Error(`Discord webhook error: ${response.status}`);
+    }
 
     form.reset();
     statusEl.textContent = "Appeal sent. Fallen Rats Gang will review it.";
