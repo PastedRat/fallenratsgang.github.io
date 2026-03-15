@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fallen Rats Gang Appeal</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="card">
+      <img src="image.png" alt="Fallen Rats Gang logo" class="hero-image" />
+      <h1>Fallen Rats Gang</h1>
+      <p class="subtitle">Appeal to Join</p>
+      <p class="description">
+        Fill out the form below and hit send. Your appeal will be delivered to GitHub YK text
+        channel through the gang Discord webhook.
+      </p>
+
+      <form id="appealForm" class="appeal-form">
+        <label>
+          Name
+          <input type="text" id="name" required placeholder="Your name" />
+        </label>
+
+        <label>
+          Discord Username
+          <input type="text" id="discord" required placeholder="name#1234" />
+        </label>
+
+        <label>
+          Why should we accept you?
+          <textarea id="appeal" rows="5" required placeholder="Write your appeal..."></textarea>
+        </label>
+
+        <button type="submit">Send Appeal</button>
+      </form>
+
+      <p id="status" class="status" aria-live="polite"></p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
